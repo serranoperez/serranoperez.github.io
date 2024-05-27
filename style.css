@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+.saludo-container {
+    text-align: center;
+}
+
+#saludo {
+    font-size: 2em;
+    color: #333;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+body-about {
+	font-family: "Inter", sans-serif;
+	line-height: 1.5;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3rem;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: .25s ease;
+}
+
+spul {
+	display: flex;
+	flex-wrap: wrap;
+    list-style: none;
+	
+	li {
+		margin-left: .75em;
+		margin-right: .75em;
+	}
+	
+	&:hover {
+		a {
+			color: #CCC;
+			&:hover {
+				color: #e52fdcc4;
+				box-shadow: 0 2px 0 0 currentcolor;
+			}
+		}
+	}
+}
+
+ul {
+	list-style: none;
+}

@@ -1,2 +1,2 @@
 Personal web page.
-Is currently on construction.
+Is always in constant change.

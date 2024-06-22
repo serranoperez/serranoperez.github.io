@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+.container {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 0vh;
+}
+
+.circular {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+	margin-left: 40px;
+}
+
+
 .saludo-container {
     text-align: center;
 }

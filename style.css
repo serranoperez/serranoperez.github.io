@@ -4,13 +4,15 @@
     display: flex;
     justify-content: left;
     align-items: left;
+    height: 0vh;
 }
 
 .circular {
-    width: 25px;
-    height: 25px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
+	margin-left: 40px;
 }
 
 

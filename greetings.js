@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     ];
 
     var indice = 0;
-    var intervalo = 1000; // Cambia cada 3 segundos (3000 milisegundos)
+    var intervalo = 1000;
 
     function mostrarSaludo() {
         var saludoElement = document.getElementById("saludo");
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         setTimeout(function() {
             saludoElement.style.opacity = 0;
             indice = (indice + 1) % saludos.length;
-            setTimeout(mostrarSaludo, 1000); // Espera 1 segundo antes de mostrar el siguiente saludo
+            setTimeout(mostrarSaludo, 1000);
         }, intervalo);
     }
 

@@ -1,4 +1,3 @@
-// Configuración del conjunto de Julia
 const canvas = document.getElementById('fractalCanvas');
 const width = canvas.width;
 const height = canvas.height;
@@ -8,11 +7,9 @@ const escapeRadius = 4;
 const cx = -0.7;
 const cy = 0.27015;
 
-// Variables para controlar la animación
 let currentIteration = 0;
 let animationInterval;
 
-// Función para determinar si un punto pertenece al conjunto de Julia
 function isInJuliaSet(x, y) {
     let zx = x;
     let zy = y;
@@ -27,7 +24,6 @@ function isInJuliaSet(x, y) {
     return true;
 }
 
-// Función para dibujar el conjunto de Julia en el canvas
 function drawJuliaSet() {
     const imageData = ctx.createImageData(width, height);
     for (let y = 0; y < height; y++) {
@@ -46,7 +42,6 @@ function drawJuliaSet() {
     ctx.putImageData(imageData, 0, 0);
 }
 
-// Función para animar la construcción del conjunto de Julia
 function animateJuliaSet() {
     if (currentIteration <= iterations) {
         drawJuliaSet();
@@ -56,5 +51,4 @@ function animateJuliaSet() {
     }
 }
 
-// Iniciar la animación
-animationInterval = setInterval(animateJuliaSet, 50); // Intervalo de 50 milisegundos (ajustable)
+animationInterval = setInterval(animateJuliaSet, 50);

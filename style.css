@@ -29,7 +29,7 @@
 
 canvas {
     display: block;
-    margin: 0 auto; /* Centrar horizontalmente */
+    margin: 0 auto;
 }
 
 *, *:after, *:before {
@@ -37,7 +37,7 @@ canvas {
 }
 
 body-about {
-	font-family: "Inter", sans-serif;
+	font-family: "Monaco", monospace;
 	line-height: 1.5;
 	min-height: 100vh;
 	display: flex;
@@ -64,10 +64,10 @@ spul {
 	
 	&:hover {
 		a {
-			color: #CCC;
+			color: #000;
 			&:hover {
 				color: #e52fdcc4;
-				box-shadow: 0 2px 0 0 currentcolor;
+				/*box-shadow: 0 2px 0 0 currentcolor;*/
 			}
 		}
 	}
@@ -75,4 +75,20 @@ spul {
 
 ul {
 	list-style: none;
+}
+
+.pages-button {
+	align-items: center;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.pages-button img {
+	width: 75px;
+	height: 75px;
+	transition: transform 0.2s;
+}
+
+.pages-button img:hover {
+	transform: scale(1.1);
 }

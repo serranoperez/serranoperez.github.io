@@ -1,2 +1,2 @@
 Personal web page.
-Is always in constant change.
+It is always on constant change.

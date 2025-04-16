@@ -1,28 +1,28 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    var saludos = [
-        {texto: "¡Hola!", idioma: "español"},
-        {texto: "Hello!", idioma: "inglés"},
-        {texto: "你好！", idioma: "chino"},
-        {texto: "こんにちは！", idioma: "japonés"},
-        {texto: "Bonjour!", idioma: "francés"},
-        {texto: "Ciao!", idioma: "italiano"},
-        {texto: "Olá!", idioma: "portugués"},
-        {texto: "안녕하세요!", idioma: "coreano"}
+    var greetings = [
+        {greeting: "¡Hola!", language: "spanish"},
+        {greeting: "Hello!", language: "english"},
+        {greeting: "你好！", language: "chinese"},
+        {greeting: "こんにちは！", language: "japones"},
+        {greeting: "Bonjour!", language: "french"},
+        {greeting: "Ciao!", language: "italian"},
+        {greeting: "Olá!", language: "portuguese"},
+        {greeting: "안녕하세요!", language: "koreano"}
     ];
 
-    var indice = 0;
-    var intervalo = 1000;
+    var id = 0;
+    var interval = 1000;
 
-    function mostrarSaludo() {
-        var saludoElement = document.getElementById("saludo");
-        saludoElement.textContent = saludos[indice].texto;
-        saludoElement.style.opacity = 1;
+    function showGreetings() {
+        var greetingElement = document.getElementById("greetings");
+        greetingElement.textContent = greetings[id].greeting;
+        greetingElement.style.opacity = 1;
         setTimeout(function() {
-            saludoElement.style.opacity = 0;
-            indice = (indice + 1) % saludos.length;
-            setTimeout(mostrarSaludo, 1000);
-        }, intervalo);
+            greetingElement.style.opacity = 0;
+            id = (id + 1) % greetings.length;
+            setTimeout(showGreetings, 1000);
+        }, interval);
     }
 
-    mostrarSaludo();
+    showGreetings();
 });

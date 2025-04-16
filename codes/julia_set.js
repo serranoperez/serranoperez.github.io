@@ -26,17 +26,27 @@ function isInJuliaSet(x, y) {
 
 function drawJuliaSet() {
     const imageData = ctx.createImageData(width, height);
+    const drawingHeight = height;
+
     for (let y = 0; y < height; y++) {
         for (let x = 0; x < width; x++) {
             const index = (y * width + x) * 4;
-            const px = (x - width / 2) / (width / 4);
-            const py = (y - height / 2) / (height / 4);
-            const inSet = isInJuliaSet(px, py);
-            const color = inSet ? 0 : 255;
-            imageData.data[index] = color;
-            imageData.data[index + 1] = color;
-            imageData.data[index + 2] = color;
-            imageData.data[index + 3] = 255;
+            if (y < drawingHeight) {
+                const px = (x - width / 2) / (width / 4);
+                const py = (y - drawingHeight / 2) / (drawingHeight / 4);
+                const inSet = isInJuliaSet(px, py);
+                const color = inSet ? 0 : 255;
+                imageData.data[index] = color;
+                imageData.data[index + 1] = color;
+                imageData.data[index + 2] = 255;
+                imageData.data[index + 3] = 139;
+            } else {
+                // Fill the bottom part with white
+                imageData.data[index] = 255;
+                imageData.data[index + 1] = 255;
+                imageData.data[index + 2] = 255;
+                imageData.data[index + 3] = 255;
+            }
         }
     }
     ctx.putImageData(imageData, 0, 0);

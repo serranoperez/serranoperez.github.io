@@ -4,7 +4,7 @@ let cellSize = 10; // Size of each cell in pixels
 let rows, cols, grid, gameInterval;
 
 resizeCanvas();
-window.addEventListener("resize", resizeGameBoard);
+//window.addEventListener("resize", resizeGameBoard);
 
 canvas.addEventListener("mousedown", handleMouseDown);
 canvas.addEventListener("mouseup", handleMouseUp);
@@ -25,8 +25,6 @@ function createEmptyGrid() {
 }
 
 function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
     rows = Math.floor(canvas.height / cellSize);
     cols = Math.floor(canvas.width / cellSize);
 }

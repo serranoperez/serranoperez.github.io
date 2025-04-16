@@ -5,6 +5,7 @@
     justify-content: left;
     align-items: left;
     height: 0vh;
+    margin-top: 30px;
 }
 
 .circular {
@@ -16,65 +17,86 @@
 }
 
 
-.saludo-container {
+.greetings-container {
+    width: 300px;
+    height: 80px;
+	margin-top: 30px;
+    
+    /* Center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+	
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+    background: white;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-#saludo {
-    font-size: 2em;
+#greetings {
+    font-size: 5ch;
     color: #333;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-}
-
-canvas {
-    display: block;
-    margin: 0 auto;
 }
 
 *, *:after, *:before {
 	box-sizing: border-box;
 }
 
-body-about {
-	font-family: "Monaco", monospace;
-	line-height: 1.5;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 3rem;
+.top ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    border-radius: 50px;
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
-	transition: .25s ease;
+.top li {
+	float: left;
 }
 
-spul {
-	display: flex;
-	flex-wrap: wrap;
-    list-style: none;
-	
-	li {
-		margin-left: .75em;
-		margin-right: .75em;
-	}
-	
-	&:hover {
-		a {
-			color: #000;
-			&:hover {
-				color: #e52fdcc4;
-				/*box-shadow: 0 2px 0 0 currentcolor;*/
-			}
-		}
-	}
+.top li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: large;
 }
 
-ul {
-	list-style: none;
+.top-imgs ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.top-imgs li {
+	float: left;
+}
+
+.top-imgs li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: large;
 }
 
 .pages-button {

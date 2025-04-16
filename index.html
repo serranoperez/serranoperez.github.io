@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="saludo-container">
-        <h1 id="saludo"></h1>
-    </div>
+    <nav class="top">
+        <ul>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/codigo.html">Coding</a></li>
+            <li><a href="pages/research.html">Research</a></li>
+            <li><a href="pages/conway.html">Conway's Game of Life</a></li>
+        </ul>
+    </nav>
     <div class="container">
-        <script src="codes/greetings.js"></script>
         <img src="imgs/JP.jpg" class="circular">
     </div>
+    <div class="greetings-container">
+        <h1 id="greetings"></h1>
+        <script src="codes/greetings.js"></script>
+    </div>
+    <div style="display: flex; justify-content: center;"> 
+        <div>
+            <canvas id="fractalCanvas" width="940" height="500"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+            <script src="codes/julia_set.js"></script>
+        </div>
+    </div>
 </body>
-<body-about>
-    <spul>
-        <li><a href="pages/about.html">About</a></li>
-        <li><a href="pages/codigo.html">Coding</a></li>
-        <li><a href="pages/research.html">Research</a></li>
-        <li><a href="pages/conway.html">Conway's game of life</a></li>
-    </spul>
-<div>
-    <canvas id="fractalCanvas" width="600" height="800"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
-    <script src="codes/julia_set.js"></script>
-</div>
-</body-about>
 </html>

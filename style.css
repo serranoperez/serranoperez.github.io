@@ -114,3 +114,58 @@
 .pages-button img:hover {
 	transform: scale(1.1);
 }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .gallery figure {
+    margin: 0;
+    text-align: center;
+    width: 450px;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  .gallery figcaption {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    padding: 5px;
+  }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.205);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .lightbox img {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 10px;
+    cursor: pointer;
+  }

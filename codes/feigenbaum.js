@@ -5,9 +5,9 @@ window.onload = function() {
     var height = canvas.height;
     var r_min = 2.5;
     var r_max = 4.0;
-    var r_step = 0.005;
+    var r_step = 0.01;
     var x = 0.5;
-    var iterations = 1000;
+    var iterations = 800;
     var current_r = r_min;
     var animationSpeed = 10;
     var requestId;

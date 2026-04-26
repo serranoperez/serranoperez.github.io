@@ -2,10 +2,12 @@
 
 .container {
     display: flex;
-    justify-content: left;
-    align-items: left;
-    height: 0vh;
+    justify-content: flex-start;
+    align-items: center;       /* vertically center image and text with each other */
+    gap: 24px;                 /* space between photo and text */
     margin-top: 30px;
+    margin-bottom: 30px;       /* breathing room before the greetings section */
+    padding-left: 40px;
 }
 
 .circular {
@@ -13,21 +15,25 @@
     height: 250px;
     border-radius: 50%;
     object-fit: cover;
-	margin-left: 40px;
+    flex-shrink: 0;            /* prevent the image from squishing */
 }
 
+.container p {
+    font-size: 1rem;
+    color: #333;
+    max-width: 500px;
+    line-height: 1.6;
+}
 
 .greetings-container {
     width: 300px;
     height: 80px;
-	margin-top: 30px;
+    margin-top: 30px;
     
-    /* Center content */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-	
     
     overflow: hidden;
     white-space: nowrap;
@@ -48,7 +54,7 @@
 }
 
 *, *:after, *:before {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .top ul {
@@ -61,11 +67,9 @@
     background-color: #333;
     border-radius: 50px;
 }
-
 .top li {
-	float: left;
+    float: left;
 }
-
 .top li a {
     display: block;
     color: white;
@@ -85,11 +89,9 @@
     background-color: white;
     border-radius: 50px;
 }
-
 .top-imgs li {
-	float: left;
+    float: left;
 }
-
 .top-imgs li a {
     display: block;
     color: white;
@@ -100,19 +102,17 @@
 }
 
 .pages-button {
-	align-items: center;
-	display: inline-block;
-	text-decoration: none;
+    align-items: center;
+    display: inline-block;
+    text-decoration: none;
 }
-
 .pages-button img {
-	width: 75px;
-	height: 75px;
-	transition: transform 0.2s;
+    width: 75px;
+    height: 75px;
+    transition: transform 0.2s;
 }
-
 .pages-button img:hover {
-	transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .gallery {
@@ -120,36 +120,32 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-  }
-  
-  .gallery img {
+}
+.gallery img {
     width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
     cursor: pointer;
-  }
-  
-  .gallery figure {
+}
+.gallery figure {
     margin: 0;
     text-align: center;
     width: 450px;
-  }
-
-  .gallery img:hover {
+}
+.gallery img:hover {
     transform: scale(1.05);
-  }
-
-  .gallery figcaption {
+}
+.gallery figcaption {
     margin-top: 8px;
     font-size: 16px;
     color: #333;
     background-color: #fff;
     padding: 5px;
-  }
+}
 
-  .lightbox {
+.lightbox {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -161,11 +157,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-  }
-  
-  .lightbox img {
+}
+.lightbox img {
     max-width: 95%;
     max-height: 95%;
     border-radius: 10px;
     cursor: pointer;
-  }
+}

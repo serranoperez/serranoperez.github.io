@@ -9,7 +9,7 @@ const FPS = 10;
 const TICK_INTERVAL = 1000 / FPS;
 
 // --- Setup ---
-const canvas = document.getElementById('fractalCanvas'); // Fixed: was 'life-canvas'
+const canvas = document.getElementById('life-canvas'); // Fixed: was 'life-canvas'
 const ctx = canvas.getContext('2d');
 
 // Fixed: use the canvas's own dimensions instead of window size

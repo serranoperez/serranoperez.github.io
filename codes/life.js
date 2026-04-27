@@ -4,7 +4,7 @@
 
 // --- Configuration ---
 const CELL_SIZE = 4;
-const ALIVE_COLOR = '#000000';
+const ALIVE_COLOR = '#00cc66';
 const FPS = 10;
 const TICK_INTERVAL = 500 / FPS;
 

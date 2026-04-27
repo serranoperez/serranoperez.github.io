@@ -1,5 +1,5 @@
 window.onload = function() {
-    var canvas = document.getElementById('canvas');
+    var canvas = document.getElementById('canvas-feigenbaum');
     var ctx = canvas.getContext('2d');
     var width = canvas.width;
     var height = canvas.height;

@@ -11,6 +11,8 @@ const TICK_INTERVAL = 1000 / FPS;
 // --- Setup ---
 const canvas = document.getElementById('life-canvas'); // Fixed: was 'life-canvas'
 const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 // Fixed: use the canvas's own dimensions instead of window size
 let COLS = Math.floor(canvas.width / CELL_SIZE);

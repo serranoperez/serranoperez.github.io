@@ -6,7 +6,7 @@
 const CELL_SIZE = 2;
 const ALIVE_COLOR = '#00FF00';
 const FPS = 10;
-const TICK_INTERVAL = 1000 / FPS;
+const TICK_INTERVAL = 500 / FPS;
 
 // --- Setup ---
 const canvas = document.getElementById('life-canvas'); // Fixed: was 'life-canvas'

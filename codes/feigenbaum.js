@@ -13,6 +13,7 @@ window.onload = function() {
     var requestId;
 
     function drawPoint(x, y) {
+        ctx.fillStyle = "white";
         ctx.fillRect(x, y, 1, 1);
     }
 

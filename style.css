@@ -1,18 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    background-color: #111;
-    color: #eee;
+  background: #000;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 #life-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: block;
+  display: block;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* ── Greeting overlay ── */
+#greeting-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#greetings {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 700;
+  color: #00cc66;
+  text-shadow:
+    0 0 20px rgba(0, 204, 102, 0.9),
+    0 0 60px rgba(0, 204, 102, 0.5),
+    0 0 120px rgba(0, 204, 102, 0.2);
+  opacity: 0;
+  letter-spacing: 0.04em;
+  transition: opacity 0.6s ease;
+  user-select: none;
+}
+
+#language-label {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.65rem, 1.8vw, 1rem);
+  font-weight: 400;
+  color: rgba(0, 204, 102, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-top: 0.6em;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  user-select: none;
+}
+
+/* ── Info text panel ── */
+#info-panel {
+  position: fixed;
+  bottom: clamp(1.5rem, 5vh, 3rem);
+  left: clamp(1.5rem, 5vw, 3.5rem);
+  z-index: 10;
+  max-width: min(480px, 88vw);
+
+  /* Solid black backdrop so no cells bleed through */
+  background: #000;
+  border: 1px solid rgba(0, 204, 102, 0.18);
+  border-radius: 4px;
+  padding: 1.4rem 1.6rem;
+
+  /* Subtle glow on the box itself */
+  box-shadow:
+    0 0 0 1px rgba(0, 204, 102, 0.06),
+    0 0 24px rgba(0, 204, 102, 0.08);
+}
+
+#info-panel p {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.72rem, 1.5vw, 0.88rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+#info-panel a {
+  text-decoration: none;
+}
+
+#info-panel a:hover span {
+  text-decoration: underline;
 }
 
 .container {
@@ -38,38 +115,6 @@ body {
     color: #eee;
     max-width: 500px;
     line-height: 1.6;
-}
-
-.greetings-container {
-    width: 300px;
-    height: 80px;
-    margin-top: 30px;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    margin: 0 auto;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-#greetings {
-    font-size: 5ch;
-    color: #eee;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-*, *:after, *:before {
-    box-sizing: border-box;
 }
 
 .top ul {

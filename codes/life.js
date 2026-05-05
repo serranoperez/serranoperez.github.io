@@ -1,109 +1,130 @@
-/**
- * life.js - Conway's Game of Life Simulation
- */
-
-// --- Configuration ---
-const CELL_SIZE = 4;
-const ALIVE_COLOR = '#00cc66';
-const FPS = 10;
+/* ═══════════════════════════════════════
+Conway's Game of Life
+═══════════════════════════════════════ */
+const CELL_SIZE    = 4;
+const ALIVE_COLOR  = '#00cc66';
+const FPS          = 10;
 const TICK_INTERVAL = 500 / FPS;
 
-// --- Setup ---
-const canvas = document.getElementById('life-canvas'); // Fixed: was 'life-canvas'
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
+const canvas = document.getElementById('life-canvas');
+const ctx    = canvas.getContext('2d');
+canvas.width  = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Fixed: use the canvas's own dimensions instead of window size
-let COLS = Math.floor(canvas.width / CELL_SIZE);
+let COLS = Math.floor(canvas.width  / CELL_SIZE);
 let ROWS = Math.floor(canvas.height / CELL_SIZE);
 let grid;
 let lastTickTime = 0;
 
-// Helper to create a 2D array initialized to 0 (dead)
 function createEmptyGrid(rows, cols) {
-    return Array(rows).fill(null).map(() => Array(cols).fill(0));
+return Array(rows).fill(null).map(() => Array(cols).fill(0));
 }
 
-// Initialize the grid with empty cells
 function initGrid() {
-    grid = createEmptyGrid(ROWS, COLS);
+grid = createEmptyGrid(ROWS, COLS);
 }
 
-// Populate the grid with random live cells
 function randomizeGrid(density = 0.2) {
-    for (let r = 0; r < ROWS; r++) {
-        for (let c = 0; c < COLS; c++) {
-            grid[r][c] = Math.random() < density ? 1 : 0;
-        }
-    }
+for (let r = 0; r < ROWS; r++)
+for (let c = 0; c < COLS; c++)
+  grid[r][c] = Math.random() < density ? 1 : 0;
 }
-
-// --- Game Logic ---
 
 function countNeighbors(r, c) {
-    let count = 0;
-    for (let i = -1; i <= 1; i++) {
-        for (let j = -1; j <= 1; j++) {
-            if (i === 0 && j === 0) continue;
-            const neighborR = r + i;
-            const neighborC = c + j;
-            if (neighborR >= 0 && neighborR < ROWS && neighborC >= 0 && neighborC < COLS) {
-                count += grid[neighborR][neighborC];
-            }
-        }
-    }
-    return count;
+let count = 0;
+for (let i = -1; i <= 1; i++) {
+for (let j = -1; j <= 1; j++) {
+  if (i === 0 && j === 0) continue;
+  const nr = r + i, nc = c + j;
+  if (nr >= 0 && nr < ROWS && nc >= 0 && nc < COLS)
+    count += grid[nr][nc];
+}
+}
+return count;
 }
 
 function getNextGeneration() {
-    const nextGrid = createEmptyGrid(ROWS, COLS);
-    for (let r = 0; r < ROWS; r++) {
-        for (let c = 0; c < COLS; c++) {
-            const neighbors = countNeighbors(r, c);
-            const isAlive = grid[r][c];
-            if (isAlive === 1 && neighbors < 2) {
-                nextGrid[r][c] = 0;
-            } else if (isAlive === 1 && (neighbors === 2 || neighbors === 3)) {
-                nextGrid[r][c] = 1;
-            } else if (isAlive === 1 && neighbors > 3) {
-                nextGrid[r][c] = 0;
-            } else if (isAlive === 0 && neighbors === 3) {
-                nextGrid[r][c] = 1;
-            } else {
-                nextGrid[r][c] = isAlive;
-            }
-        }
-    }
-    return nextGrid;
+const next = createEmptyGrid(ROWS, COLS);
+for (let r = 0; r < ROWS; r++) {
+for (let c = 0; c < COLS; c++) {
+  const n = countNeighbors(r, c);
+  const alive = grid[r][c];
+  if      (alive && n < 2)           next[r][c] = 0;
+  else if (alive && (n === 2||n===3)) next[r][c] = 1;
+  else if (alive && n > 3)            next[r][c] = 0;
+  else if (!alive && n === 3)         next[r][c] = 1;
+  else                                next[r][c] = alive;
 }
-
-// --- Drawing ---
+}
+return next;
+}
 
 function drawGrid() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = ALIVE_COLOR;
-    for (let r = 0; r < ROWS; r++) {
-        for (let c = 0; c < COLS; c++) {
-            if (grid[r][c] === 1) {
-                ctx.fillRect(c * CELL_SIZE, r * CELL_SIZE, CELL_SIZE, CELL_SIZE);
-            }
-        }
-    }
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+ctx.fillStyle = ALIVE_COLOR;
+for (let r = 0; r < ROWS; r++)
+for (let c = 0; c < COLS; c++)
+  if (grid[r][c] === 1)
+    ctx.fillRect(c * CELL_SIZE, r * CELL_SIZE, CELL_SIZE, CELL_SIZE);
 }
-
-// --- Main Loop ---
 
 function gameLoop(timestamp) {
-    if (timestamp - lastTickTime > TICK_INTERVAL) {
-        grid = getNextGeneration();
-        drawGrid();
-        lastTickTime = timestamp;
-    }
-    requestAnimationFrame(gameLoop);
+if (timestamp - lastTickTime > TICK_INTERVAL) {
+grid = getNextGeneration();
+drawGrid();
+lastTickTime = timestamp;
+}
+requestAnimationFrame(gameLoop);
 }
 
-// --- Initialization ---
 initGrid();
 randomizeGrid();
 requestAnimationFrame(gameLoop);
+
+/* ═══════════════════════════════════════
+Greetings Animation
+═══════════════════════════════════════ */
+document.addEventListener("DOMContentLoaded", function () {
+var greetings = [
+{ greeting: "¡Hola!",      language: "Spanish"    },
+{ greeting: "Hello!",      language: "English"    },
+{ greeting: "你好！",       language: "Chinese"    },
+{ greeting: "こんにちは！", language: "Japanese"   },
+{ greeting: "Bonjour!",    language: "French"     },
+{ greeting: "Ciao!",       language: "Italian"    },
+{ greeting: "Olá!",        language: "Portuguese" },
+{ greeting: "안녕하세요!",  language: "Korean"     }
+];
+
+var id            = 0;
+var visibleMs     = 1200;   // time fully visible
+var fadeMs        = 600;    // matches CSS transition duration
+
+var greetEl  = document.getElementById("greetings");
+// var labelEl  = document.getElementById("language-label");
+
+function showGreeting() {
+    // Update text while invisible
+    greetEl.textContent = greetings[id].greeting;
+    // labelEl.textContent = greetings[id].language;
+
+// Fade in
+requestAnimationFrame(() => {
+  greetEl.style.opacity = "1";
+  // labelEl.style.opacity = "1";
+});
+
+// Fade out after visibleMs
+setTimeout(function () {
+  greetEl.style.opacity = "0";
+  //labelEl.style.opacity = "0";
+
+  // Advance and schedule next
+  id = (id + 1) % greetings.length;
+  setTimeout(showGreeting, fadeMs + 150);
+}, visibleMs);
+}
+
+// Tiny delay so the first render is in view
+setTimeout(showGreeting, 300);
+});

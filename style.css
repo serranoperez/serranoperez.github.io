@@ -55,7 +55,7 @@ body {
   background: #000;
   border: 1px solid rgba(0, 204, 102, 0.18);
   border-radius: 4px;
-  padding: 1.4rem 1.6rem;
+  padding: 1.8rem 1.9rem;
 
   /* Subtle glow on the box itself */
   box-shadow:
@@ -74,7 +74,7 @@ body {
   /* Solid black backdrop so no cells bleed through */
   background: #000;
   border: 1px solid rgba(0, 204, 102, 0.18);
-  border-radius: 50%;
+  border-radius: 4px;
   padding: 1.4rem 1.6rem;
 
   /* Subtle glow on the box itself */

@@ -45,59 +45,54 @@ body {
 }
 
 #info-panel-img {
-  position: fixed;
-  top: clamp(1.5rem, 5vh, 3rem);
-  left: clamp(1.5rem, 5vw, 3.5rem);
-  z-index: 10;
-  max-width: min(480px, 88vw);
+    position: fixed;
+    /* sit just below the nav bar (44px) with a small gap */
+    top: calc(44px + 0.8rem);
+    left: clamp(1rem, 3.5vw, 2.5rem);
+    z-index: 10;
+    background: #000;
+    border: 1px solid rgba(0, 204, 102, 0.18);
+    border-radius: 50%;
+    padding: 0.9rem;
+    box-shadow:
+        0 0 0 1px rgba(0, 204, 102, 0.06),
+        0 0 18px rgba(0, 204, 102, 0.08);
+}
 
-  /* Solid black backdrop so no cells bleed through */
-  background: #000;
-  border: 1px solid rgba(0, 204, 102, 0.18);
-  border-radius: 50%;
-  padding: 1.8rem 1.9rem;
-
-  /* Subtle glow on the box itself */
-  box-shadow:
-    0 0 0 1px rgba(0, 204, 102, 0.06),
-    0 0 24px rgba(0, 204, 102, 0.08);
+#info-panel-img img {
+    display: block;
+    width: clamp(60px, 8vw, 100px);
+    height: clamp(60px, 8vw, 100px);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* ── Info text panel ── */
 #info-panel {
-  position: fixed;
-  bottom: clamp(1.5rem, 5vh, 3rem);
-  left: clamp(1.5rem, 5vw, 3.5rem);
-  z-index: 10;
-  max-width: min(480px, 88vw);
-
-  /* Solid black backdrop so no cells bleed through */
-  background: #000;
-  border: 1px solid rgba(0, 204, 102, 0.18);
-  border-radius: 4px;
-  padding: 1.4rem 1.6rem;
-
-  /* Subtle glow on the box itself */
-  box-shadow:
-    0 0 0 1px rgba(0, 204, 102, 0.06),
-    0 0 24px rgba(0, 204, 102, 0.08);
+    position: fixed;
+    bottom: clamp(1rem, 3vh, 2rem);
+    left: clamp(1rem, 3.5vw, 2.5rem);
+    z-index: 10;
+    max-width: min(360px, 82vw);
+    background: #000;
+    border: 1px solid rgba(0, 204, 102, 0.18);
+    border-radius: 4px;
+    padding: 0.9rem 1.1rem;
+    box-shadow:
+        0 0 0 1px rgba(0, 204, 102, 0.06),
+        0 0 18px rgba(0, 204, 102, 0.08);
 }
 
 #info-panel p {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(0.72rem, 1.5vw, 0.88rem);
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.72);
-  margin: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(0.62rem, 1.2vw, 0.78rem);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.68);
+    margin: 0;
 }
 
-#info-panel a {
-  text-decoration: none;
-}
-
-#info-panel a:hover span {
-  text-decoration: underline;
-}
+#info-panel a { text-decoration: none; }
+#info-panel a:hover span { text-decoration: underline; }
 
  nav.top ul {
     display: flex;

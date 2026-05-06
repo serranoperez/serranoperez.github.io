@@ -46,7 +46,7 @@ body {
 
 #info-panel-img {
   position: fixed;
-  top: clamp(2.0rem, 5vh, 3rem);
+  top: clamp(1.5rem, 5vh, 3rem);
   left: clamp(1.5rem, 5vw, 3.5rem);
   z-index: 10;
   max-width: min(480px, 88vw);
@@ -124,7 +124,7 @@ nav.top ul li a {
     justify-content: center;
     width: 100%;
     font-family: 'Space Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -154,8 +154,8 @@ nav.top ul li a:hover {
 }
 
 .circular {
-    width: 250px;
-    height: 250px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;            /* prevent the image from squishing */

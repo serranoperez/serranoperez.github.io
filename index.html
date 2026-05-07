@@ -55,6 +55,7 @@
     const TICK_INTERVAL = 500 / FPS;
     
     const canvas = document.getElementById('life-canvas');
+    canvas.style.pointerEvents = 'none';
     const ctx    = canvas.getContext('2d');
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;

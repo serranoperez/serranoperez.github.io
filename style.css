@@ -105,7 +105,7 @@ body {
         0 0 18px rgba(0, 204, 102, 0.08);
 }
 
-#info-panel p {
+#info-text p {
     font-family: 'Space Mono', monospace;
     font-size: clamp(0.62rem, 1.2vw, 0.78rem);
     line-height: 1.7;

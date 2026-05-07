@@ -112,6 +112,29 @@ body {
     margin: 0;
 }
 
+#info-text ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0, 204, 102, 0.06);
+    text-decoration: none;
+    padding: 0.85rem 0.5rem;
+    transition: color 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#info-text ul li a:hover {
+    color: #00cc66;
+    background: rgba(0, 204, 102, 0.07);
+}
+
 nav.top ul {
   display: flex;
   flex-wrap: wrap;

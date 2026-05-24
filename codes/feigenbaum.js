@@ -27,7 +27,7 @@ window.onload = function() {
     }
 
     function drawDiagram() {
-        ctx.fillStyle = 'white';
+        ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, width, height);
         ctx.fillStyle = 'black';
         for (var r = r_min; r <= current_r; r += r_step) {

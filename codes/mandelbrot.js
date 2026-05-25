@@ -9,7 +9,7 @@ function iterateMandelbrotWithDelay(maxIterations, delay) {
     let iterations = 1;
 
     function draw() {
-        const imageData = ctx.getImageData(1, 1, width, height);
+        const imageData = ctx.getImageData(0, 0, width, height);
         const data = imageData.data;
 
         for (let y = 0; y < height; y++) {
@@ -31,7 +31,7 @@ function iterateMandelbrotWithDelay(maxIterations, delay) {
                     }
                 }
 
-                const color = (i === iterations) ? 0 : 255;
+                const color = (i === iterations) ? 255 : 0;
                 data[index] = color; // Red
                 data[index + 1] = color; // Green
                 data[index + 2] = color; // Blue

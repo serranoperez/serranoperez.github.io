@@ -60,8 +60,8 @@ body {
 
 #info-panel-img img {
     display: block;
-    width: clamp(60px, 8vw, 100px);
-    height: clamp(60px, 8vw, 100px);
+    width: clamp(90px, 30vw, 100px);
+    height: clamp(90px, 30vw, 100px);
     border-radius: 100%;
     object-fit: cover;
 }
